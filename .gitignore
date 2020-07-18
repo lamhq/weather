@@ -8,8 +8,11 @@
 # testing
 /coverage
 
-# production
-/build
+# react production build
+/dist
+
+# dotenv environment variables file
+.env
 
 # misc
 .DS_Store
