@@ -47,8 +47,14 @@ const DailyForeCast: React.FC<DailyForeCastProps> = ({ date, minTemp, maxTemp, w
       <Header>{date}</Header>
       <WeatherImg src={weatherImgUrl} alt="" />
       <Footer>
-        <LowTemp>{minTemp}&#xB0;</LowTemp>
-        <HiTemp>{maxTemp}&#xB0;</HiTemp>
+        <LowTemp>
+          {minTemp}
+          &#xB0;
+        </LowTemp>
+        <HiTemp>
+          {maxTemp}
+          &#xB0;
+        </HiTemp>
       </Footer>
     </Container>
   );
