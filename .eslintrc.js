@@ -8,6 +8,7 @@ const { rules: baseStyleRules } = require('eslint-config-airbnb-base/rules/style
 const { rules: baseVariablesRules } = require('eslint-config-airbnb-base/rules/variables');
 
 module.exports = {
+  root: true, // ESLint will stop looking in parent folders once it finds a configuration with "root": true.
   parser: '@typescript-eslint/parser', // Specifies the ESLint parser
   parserOptions: {
     ecmaVersion: 2020, // Allows for the parsing of modern ECMAScript features
@@ -17,6 +18,7 @@ module.exports = {
     },
     project: './tsconfig.json',
   },
+  plugins: ['@typescript-eslint', 'jest'],
   env: {
     'jest/globals': true,
   },
@@ -37,7 +39,6 @@ module.exports = {
     // Append 'ts' extensions to Airbnb 'import/extensions' setting
     'import/extensions': ['.js', '.jsx', '.ts', '.tsx'],
   },
-  plugins: ['@typescript-eslint', 'jest'],
   extends: [
     'airbnb',
     'airbnb/hooks',
