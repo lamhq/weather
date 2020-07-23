@@ -1,6 +1,6 @@
 import React from 'react';
 import styled from 'styled-components';
-import { DailyWeather } from './types';
+import { DailyWeather } from '../types/common';
 
 type DailyForeCastProps = DailyWeather;
 

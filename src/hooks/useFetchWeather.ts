@@ -1,7 +1,7 @@
 import React from 'react';
 import { format } from 'date-fns';
 import axios, { AxiosResponse } from 'axios';
-import { DailyWeather, MwCity, MwWeather, ConsolidatedWeather, RetryableError } from './types';
+import { DailyWeather, MwCity, MwWeather, ConsolidatedWeather, RetryableError } from '../types/common';
 
 const API_BASE_URL = '/api';
 
@@ -21,6 +21,10 @@ export default function useFetchWeather(city: string): UseFetchWeatherResult {
     try {
       setLoading(true);
       setError(undefined);
+      if (!city) {
+        setData([]);
+        return;
+      }
 
       const locSearchResp: AxiosResponse<MwCity[]> = await axios.get(`${API_BASE_URL}/location/search`, {
         params: { query: city },
@@ -50,10 +54,8 @@ export default function useFetchWeather(city: string): UseFetchWeatherResult {
   }, [setLoading, setData, setError, city]);
 
   React.useEffect(() => {
-    if (city) {
-      fetchData();
-    }
-  }, [city, fetchData]);
+    fetchData();
+  }, [fetchData]);
 
   return {
     isLoading,

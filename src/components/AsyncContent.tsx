@@ -2,7 +2,8 @@ import React from 'react';
 import styled from 'styled-components';
 import ScaleLoader from 'react-spinners/ScaleLoader';
 import Button from 'react-bootstrap/Button';
-import { RetryableError } from './types';
+import Alert from 'react-bootstrap/Alert';
+import { RetryableError } from '../types/common';
 
 const Container = styled.div`
   display: flex;
@@ -29,13 +30,17 @@ const AsyncContent = ({ isLoading, error, hasData, children }: AsyncContentProps
   }
 
   if (error) {
+    const message = `There was an error when loading your data: ${error.message}. `;
     return (
       <Container>
-        <p>
-          There was an error loading your data:&nbsp;
-          {error.message}
-        </p>
-        {error.retry && <Button onClick={error.retry}>Retry</Button>}
+        <Alert variant="danger">
+          {message}
+          {error.retry && (
+            <Button onClick={error.retry} variant="link" size="sm">
+              Retry
+            </Button>
+          )}
+        </Alert>
       </Container>
     );
   }

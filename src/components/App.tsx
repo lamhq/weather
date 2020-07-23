@@ -6,7 +6,7 @@ import styled from 'styled-components';
 import debounce from 'lodash.debounce';
 import DailyForeCast from './DailyForecast';
 import SearchForm from './SearchForm';
-import useFetchWeather from './useFetchWeather';
+import useFetchWeather from '../hooks/useFetchWeather';
 import AsyncContent from './AsyncContent';
 
 const Title = styled.h1`
@@ -25,7 +25,7 @@ const App: React.FC = () => {
     <Container>
       <Title>Weather Forecast</Title>
       <SearchForm query={query} onChange={handleChange} />
-      <AsyncContent error={error} isLoading={isLoading} hasData={!!data}>
+      <AsyncContent error={error} isLoading={isLoading} hasData={data.length > 0}>
         {() => (
           <Row>
             {data.map(({ date, minTemp, maxTemp, weatherImgUrl }) => (
