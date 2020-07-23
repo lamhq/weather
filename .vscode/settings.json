@@ -1,12 +1,5 @@
 {
   "editor.codeActionsOnSave": {
     "source.fixAll.eslint": true
-  },
-  "eslint.options": {
-    "parserOptions": {
-      "project": [
-        "${workspaceFolder}/tsconfig.json"
-      ],
-    }
   }
 }

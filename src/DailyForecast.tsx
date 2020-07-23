@@ -1,12 +1,8 @@
 import React from 'react';
 import styled from 'styled-components';
+import { DailyWeather } from './types';
 
-interface DailyForeCastProps {
-  date: string;
-  minTemp: number;
-  maxTemp: number;
-  weatherImgUrl: string;
-}
+type DailyForeCastProps = DailyWeather;
 
 const Container = styled.article`
   display: flex;
