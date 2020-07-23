@@ -3,6 +3,7 @@ import Container from 'react-bootstrap/Container';
 import Row from 'react-bootstrap/Row';
 import Col from 'react-bootstrap/Col';
 import styled from 'styled-components';
+import debounce from 'lodash.debounce';
 import DailyForeCast from './DailyForecast';
 import SearchForm from './SearchForm';
 import useFetchWeather from './useFetchWeather';
@@ -16,15 +17,14 @@ const Title = styled.h1`
 const App: React.FC = () => {
   const [query, setQuery] = React.useState('Ho Chi Minh City');
   const { isLoading, error, data } = useFetchWeather(query);
-  const onChange: React.ChangeEventHandler<HTMLInputElement> = (e) => {
-    e.preventDefault();
-    setQuery(e.target.value);
-  };
+  const handleChange = debounce((value: string) => {
+    setQuery(value);
+  }, 500);
 
   return (
     <Container>
       <Title>Weather Forecast</Title>
-      <SearchForm query={query} onChange={onChange} />
+      <SearchForm query={query} onChange={handleChange} />
       <AsyncContent error={error} isLoading={isLoading} hasData={!!data}>
         {() => (
           <Row>

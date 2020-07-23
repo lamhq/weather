@@ -10,10 +10,15 @@ const Container = styled(InputGroup)`
 
 interface SearchFormProps {
   query: string;
-  onChange: React.ChangeEventHandler<HTMLInputElement>;
+  onChange: (value: string) => void;
 }
 
 const SearchForm: React.FC<SearchFormProps> = ({ query, onChange }) => {
+  const [value, setValue] = React.useState(query);
+  const handleChange: React.ChangeEventHandler<HTMLInputElement> = (e) => {
+    setValue(e.target.value);
+    onChange(e.target.value);
+  };
   return (
     <Container>
       <InputGroup.Prepend>
@@ -21,7 +26,7 @@ const SearchForm: React.FC<SearchFormProps> = ({ query, onChange }) => {
           <MdSearch />
         </InputGroup.Text>
       </InputGroup.Prepend>
-      <FormControl value={query} onChange={onChange} placeholder="Enter city name, ex: Ho Chi Minh City" />
+      <FormControl value={value} onChange={handleChange} placeholder="Enter city name, ex: Ho Chi Minh City" />
     </Container>
   );
 };

@@ -3,7 +3,7 @@ import { format } from 'date-fns';
 import axios, { AxiosResponse } from 'axios';
 import { DailyWeather, MwCity, MwWeather, ConsolidatedWeather, RetryableError } from './types';
 
-const API_BASE_URL = '/api1';
+const API_BASE_URL = '/api';
 
 interface UseFetchWeatherResult {
   isLoading: boolean;
