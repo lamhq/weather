@@ -18,8 +18,15 @@ module.exports = {
     },
     project: './tsconfig.json',
   },
-  plugins: ['@typescript-eslint', 'jest'],
+  plugins: [
+    '@typescript-eslint', 
+    'react',
+    'jest', 
+    'prettier'
+  ],
   env: {
+    browser: true,
+    es2020: true,    
     'jest/globals': true,
   },
   settings: {
