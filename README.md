@@ -1,4 +1,14 @@
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+# Weather Forecast
+
+A web app which can display a five day weather forecast for a city.
+
+
+## Requirements
+
+- Mac OS X, Windows, or Linux
+- [Yarn](https://yarnpkg.com/) package + [Node.js](https://nodejs.org/) v8.16.2 or
+  newer
+
 
 ## Available Scripts
 
@@ -9,36 +19,40 @@ In the project directory, you can run:
 Runs the app in the development mode.<br />
 Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
 
-The page will reload if you make edits.<br />
-You will also see any lint errors in the console.
-
-### `yarn test`
-
-Launches the test runner in the interactive watch mode.<br />
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+The page will update (using [Hot Module Replacement](https://webpack.js.org/concepts/hot-module-replacement/)) if you make edits.<br />
 
 ### `yarn build`
 
-Builds the app for production to the `build` folder.<br />
+Builds the app for production to the `dist` folder.<br />
 It correctly bundles React in production mode and optimizes the build for the best performance.
 
 The build is minified and the filenames include the hashes.<br />
 Your app is ready to be deployed!
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
 
-### `yarn eject`
+### `yarn test`
 
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
+Launch unit test runner with coverage information. Minimum coverage threshold is also configured for the test to pass.
 
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+### `yarn test:watch`
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
+Launches the test runner in the interactive watch mode.
 
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
+### `yarn lint`
 
-## Learn More
+Launches the linter that analyzes source code to flag programming errors, bugs.
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+## Technologies Used
+
+- React 16 with 100% components writed in hook
+- TypeScript
+- React Bootstrap
+- styled components for Styling React components
+
+
+## Source code features
+
+- ESLint integrated with [Airbnb JavaScript Style Guide](https://github.com/airbnb/javascript) (customized for TypeScript project), [Prettier](https://prettier.io/).
+- Unit test implemented for testing React components with [DOM Testing](https://testing-library.com/docs/dom-testing-library/intro) and [Snapshot Testing](https://jestjs.io/docs/en/snapshot-testing)
+- [commitlint](https://github.com/conventional-changelog/commitlint) is used to checks if your commit messages meet the [conventional commit](https://conventionalcommits.org/) format
