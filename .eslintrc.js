@@ -232,9 +232,11 @@ module.exports = {
       baseImportsRules['import/no-extraneous-dependencies'][0],
       {
         ...baseImportsRules['import/no-extraneous-dependencies'][1],
-        devDependencies: baseImportsRules[
-          'import/no-extraneous-dependencies'
-        ][1].devDependencies.map((glob) => glob.replace('js,jsx', 'js,jsx,ts,tsx')),
+        devDependencies: [
+          ...baseImportsRules['import/no-extraneous-dependencies'][1]
+            .devDependencies.map((glob) => glob.replace('js,jsx', 'js,jsx,ts,tsx')),
+          '**/jest.setup.ts',
+        ],
       },
     ],
 
