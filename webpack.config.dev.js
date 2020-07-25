@@ -2,8 +2,8 @@ require('dotenv').config();
 
 const merge = require('webpack-merge');
 const webpack = require('webpack');
-const common = require('./webpack.common.js');
-var https = require('https');
+const https = require('https');
+const common = require('./webpack.config.common.js');
 
 module.exports = merge(common, {
   mode: 'development',

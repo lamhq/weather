@@ -3,7 +3,7 @@ const merge = require('webpack-merge');
 const MiniCssExtractPlugin = require('mini-css-extract-plugin');
 const OptimizeCSSAssetsPlugin = require('optimize-css-assets-webpack-plugin');
 const TerserPlugin = require('terser-webpack-plugin');
-const common = require('./webpack.common.js');
+const common = require('./webpack.config.common.js');
 
 const ASSET_PATH = process.env.CDN_BASE_URL || '/';
 
