@@ -10,6 +10,16 @@ A web app which can display a five day weather forecast for a city.
   newer
 
 
+## Running project locally
+
+Open terminal in project directory and run the following commands:
+
+```sh
+cp .env.example .env
+yarn start
+```
+
+
 ## Available Scripts
 
 In the project directory, you can run:
@@ -43,9 +53,9 @@ Launches the test runner in the interactive watch mode.
 Launches the linter that analyzes source code to flag programming errors, bugs.
 
 
-## Technologies Used
+## Technologies used
 
-- React 16 with 100% components writed in hook
+- React 16, side effect is handled using React Hook
 - TypeScript
 - React Bootstrap
 - styled components for Styling React components
@@ -53,6 +63,23 @@ Launches the linter that analyzes source code to flag programming errors, bugs.
 
 ## Source code features
 
-- ESLint integrated with [Airbnb JavaScript Style Guide](https://github.com/airbnb/javascript) (customized for TypeScript project), [Prettier](https://prettier.io/).
-- Unit test implemented for testing React components with [DOM Testing](https://testing-library.com/docs/dom-testing-library/intro) and [Snapshot Testing](https://jestjs.io/docs/en/snapshot-testing)
-- [commitlint](https://github.com/conventional-changelog/commitlint) is used to checks if your commit messages meet the [conventional commit](https://conventionalcommits.org/) format
+### Unit Test
+
+- [DOM testing](https://testing-library.com/docs/dom-testing-library/intro) to check component render correctly
+- [Snapshot Testing](https://jestjs.io/docs/en/snapshot-testing) to check component render successfully with no regression
+- Unit test for custom React hook with [react-hooks-testing-library](https://react-hooks-testing-library.com/).
+- API Mocking with [Jest mocking feature](https://jestjs.io/docs/en/mock-functions).
+- Code pushing will be checked by unit test locally before transferring to remote repository.
+- Code coverage has to pass a minimum threshold defined in `jest.config.js` to ensure effective unit test.
+
+
+### Linter configuration
+
+- ESLint is configurated with [Airbnb JavaScript Style Guide](https://github.com/airbnb/javascript) (customized for TypeScript project), [Prettier](https://prettier.io/).
+- Code before committing will be validated automatically by ESLint, commit message is ensured to meet [conventional commit](https://conventionalcommits.org/) format by [commitlint](https://github.com/conventional-changelog/commitlint).
+
+
+### Webpack configuration
+
+- Webpack is configured for both development and production.
+- API request is proxied in development mode to resolved CORS issue.
