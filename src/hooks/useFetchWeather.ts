@@ -24,15 +24,13 @@ export default function useFetchWeather(city: string): UseFetchWeatherResult {
   const [error, setError] = React.useState();
 
   const fetchData = React.useCallback(async () => {
-    console.log('fetchData');
+    if (!city) {
+      return;
+    }
+
     try {
       setLoading(true);
       setError(undefined);
-      if (!city) {
-        setData([]);
-        setLoading(false);
-        return;
-      }
 
       const locSearchResp: AxiosResponse<MwCity[]> = await axios.get(
         `${API_BASE_URL}/location/search`,
@@ -42,7 +40,6 @@ export default function useFetchWeather(city: string): UseFetchWeatherResult {
       );
       if (!locSearchResp.data.length) {
         setData([]);
-        setLoading(false);
         return;
       }
 
