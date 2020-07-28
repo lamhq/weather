@@ -1,0 +1,63 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`AsyncContent component should match snapshot 1`] = `
+<div
+  className="sc-AxjAm ilACxQ"
+  role="alert"
+>
+  <div
+    className="css-0"
+  >
+    <div
+      className="css-1ehwkh4"
+    />
+    <div
+      className="css-1omaxx1"
+    />
+    <div
+      className="css-343uqu"
+    />
+    <div
+      className="css-1e4pia3"
+    />
+    <div
+      className="css-11xacok"
+    />
+  </div>
+</div>
+`;
+
+exports[`AsyncContent component should match snapshot 2`] = `
+<div
+  className="sc-AxjAm ilACxQ"
+>
+  There's no data to display
+</div>
+`;
+
+exports[`AsyncContent component should match snapshot 3`] = `
+<div
+  className="sc-AxjAm ilACxQ"
+>
+  <div
+    className="fade alert alert-danger show"
+    role="alert"
+  >
+    There was an error when loading your data: sample error message. 
+    <button
+      className="btn btn-link btn-sm"
+      disabled={false}
+      onClick={[MockFunction]}
+      type="button"
+    >
+      Retry
+    </button>
+  </div>
+</div>
+`;
+
+exports[`AsyncContent component should match snapshot 4`] = `
+<p>
+  loaded data
+</p>
+`;

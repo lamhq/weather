@@ -4,7 +4,7 @@ import Row from 'react-bootstrap/Row';
 import Col from 'react-bootstrap/Col';
 import styled from 'styled-components';
 import debounce from 'lodash.debounce';
-import DailyForeCast from './DailyForecast';
+import DailyForecast from './DailyForecast';
 import SearchForm from './SearchForm';
 import useFetchWeather from '../hooks/useFetchWeather';
 import AsyncContent from './AsyncContent';
@@ -30,7 +30,12 @@ const App: React.FC = () => {
           <Row>
             {data.map(({ date, minTemp, maxTemp, weatherImgUrl }) => (
               <Col key={date} lg={2} md={3} xs={6}>
-                <DailyForeCast date={date} minTemp={minTemp} maxTemp={maxTemp} weatherImgUrl={weatherImgUrl} />
+                <DailyForecast
+                  date={date}
+                  minTemp={minTemp}
+                  maxTemp={maxTemp}
+                  weatherImgUrl={weatherImgUrl}
+                />
               </Col>
             ))}
           </Row>

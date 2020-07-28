@@ -1,0 +1,34 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`DailyForecast component should match snapshot 1`] = `
+<article
+  className="sc-AxjAm fmtPVS"
+>
+  <header
+    className="sc-AxirZ jelnuR"
+  >
+    Monday
+  </header>
+  <img
+    alt=""
+    className="sc-AxiKw hFUAIY"
+    src="/"
+  />
+  <footer
+    className="sc-AxhCb cPNXDK"
+  >
+    <div
+      className="sc-AxhUy jRsvKf"
+    >
+      20
+      °
+    </div>
+    <div
+      className="sc-AxhUy sc-AxgMl gtKIYK"
+    >
+      28
+      °
+    </div>
+  </footer>
+</article>
+`;

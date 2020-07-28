@@ -26,7 +26,11 @@ const SearchForm: React.FC<SearchFormProps> = ({ query, onChange }) => {
           <MdSearch />
         </InputGroup.Text>
       </InputGroup.Prepend>
-      <FormControl value={value} onChange={handleChange} placeholder="Enter city name, ex: Ho Chi Minh City" />
+      <FormControl
+        value={value}
+        onChange={handleChange}
+        placeholder="Enter city name, ex: Ho Chi Minh City"
+      />
     </Container>
   );
 };
