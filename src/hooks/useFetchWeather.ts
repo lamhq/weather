@@ -8,8 +8,7 @@ import {
   ConsolidatedWeather,
   RetryableError,
 } from '../types/common';
-
-const API_BASE_URL = '/api';
+import { API_BASE_URL } from '../constants/common';
 
 interface UseFetchWeatherResult {
   isLoading: boolean;
