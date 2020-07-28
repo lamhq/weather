@@ -29,8 +29,6 @@ In the project directory, you can run:
 Runs the app in the development mode.<br />
 Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
 
-The page will update (using [Hot Module Replacement](https://webpack.js.org/concepts/hot-module-replacement/)) if you make edits.<br />
-
 ### `yarn build`
 
 Builds the app for production to the `dist` folder.<br />
