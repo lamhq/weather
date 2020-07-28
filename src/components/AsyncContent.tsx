@@ -15,15 +15,20 @@ const Container = styled.div`
 
 interface AsyncContentProps {
   isLoading: boolean;
+  children: () => React.ReactElement;
   error?: RetryableError;
   hasData?: boolean;
-  children: () => React.ReactElement;
 }
 
-const AsyncContent = ({ isLoading, error, hasData, children }: AsyncContentProps): React.ReactElement => {
+const AsyncContent = ({
+  isLoading,
+  error,
+  hasData,
+  children,
+}: AsyncContentProps): React.ReactElement => {
   if (isLoading) {
     return (
-      <Container>
+      <Container role="alert">
         <ScaleLoader color="#e9ecef" loading={isLoading} />
       </Container>
     );
